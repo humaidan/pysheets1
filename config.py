@@ -1,10 +1,27 @@
 CONFIG = {
-    'sheetname_source': 10_000,
-    'sheetname_dest': 5000,
-    'last_date': '2022-10-31 23:59:00',
-    'field_mapping': {
-        "Field1": {"row": 1, "col": 1},
-        "Field2": {"row": 2, "col": 2},
-        "Field3": {"row": 3, "col": 3},
-    }
+    "excelfile": "BAC-GF Systems - Jun23.xlsx",
+    "modified_excelfile": "out/GFG Systems_modified.xlsx",
+    "sheetname_source": "All Services",
+    "sheetname_dest": "Template",
+    "sysname_col": 3,
+    "sysname_col_append": " Service",
+    "field_mapping": {
+        "E5": "F",
+        "C8": ["E", "F", "G", "I"],
+        "H11": "K",
+        "H8": "L",
+        "J8": ["S", "T", "U", "V"],
+        "D16": "AE",
+        "D20": "AG",
+        "H16": "AH",
+        "H20": "AI",
+        "Q8": "AJ",
+        "Q18": "AK",
+    },
+    "pre_fills": {
+        "H8": "BHD ",
+    },
+    "short_titles": {
+        "ISO 27001:2013 Recertification Audit": "ISO 27001",
+    },
 }
