@@ -2,6 +2,7 @@
 # Project specific files/folders
 out/*
 !out/.gitkeep
+BAC-GF Systems*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
