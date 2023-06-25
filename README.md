@@ -1,10 +1,10 @@
 # Project Title
 
-Python Excel Data Extractor
+Python Excel Sheets Extractor
 
 ## Project Description
 
-The Python Excel Data Extractor is a script that reads data from a source Excel sheet and maps specific fields to different locations in a destination Excel sheet. It automates the process of transferring data between sheets based on a predefined mapping.
+The Python Excel Data Extractor is a script that reads data from a source Excel sheet and maps specific fields to different locations in a destination Excel sheet. It automates the process of transferring data between sheets based on a predefined mapping while creating new sheets from a certain Template Sheet.
 
 ## Run Instructions
 
@@ -29,6 +29,8 @@ Otherwise, run it remotely from google colab if you have an account:
 6. The notebook will open in Google Colab, and you'll be able to execute the code cells and interact with the notebook's content.
 7. Place your excel in main folder (check config.py) and the output file will be in out folder
 8. from Runtime menu -> Run all & confirm any warning
+9. Download your out file
+   ![Ali Humaidan pysheets1 Google Colab Successful Run Image](images/alihumaidan-pysheet-success.png)
 
 ## Configuration
 
@@ -47,6 +49,8 @@ You can modify the following variables in the `config.py` file:
     - pre_fills: dictionary to pre-fill a certain field in the above field_mapping dict
     - short_titles: rename a sheet name if found in this dict
 ```
+
+![Ali Humaidan pysheets1 config file Image](images/alihumaidan-pysheet-config.png)
 
 ## Contributing
 
