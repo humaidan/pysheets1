@@ -17,7 +17,7 @@ To run the app if you have your own python environment, do the followings:
 bash>python main.py
 ```
 
-Otherwise, run it remotely from google colab if you have an account:
+if you know what you're doing you can run it with Google Colab(https://colab.research.google.com/) or nbviewer.org(https://nbviewer.org/). Otherwise you probably shouldn't be touching this repo or reading this file.
 
 1. Go to https://colab.research.google.com/.
 2. Click on the "GitHub" tab.
