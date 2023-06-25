@@ -10,15 +10,21 @@ from config import CONFIG
 debug = False
 
 print("Opening source sheet ...")
-wb = openpyxl.load_workbook(CONFIG["excelfile"])
 
-sheet1 = wb[CONFIG["sheetname_source"]]
-sheet2 = wb[CONFIG["sheetname_dest"]]
+try:
+    wb = openpyxl.load_workbook(CONFIG["excelfile"])
+
+except Exception as e:
+    print(f"Source workbook [{CONFIG['excelfile']}] error: {e}")
+    raise  # Raise an exception to halt further code execution
+
 
 print("Parsing and writing data ...")
 
 sheets = 0
 start_row = CONFIG["start_row"]
+sheet1 = wb[CONFIG["sheetname_source"]]
+sheet2 = wb[CONFIG["sheetname_dest"]]
 
 # for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, max_row=12, values_only=True)):
 for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, values_only=True)):

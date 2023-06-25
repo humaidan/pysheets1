@@ -8,6 +8,17 @@ The Python Excel Data Extractor is a script that reads data from a source Excel 
 
 ## Run Instructions
 
+-   Before running the script you have to place your excel file in root folder of the project
+    (read Configuration section for full setup)
+
+To run the app if you have your own python environment, do the followings:
+
+```bash
+bash>python main.py
+```
+
+Otherwise, run it remotely from google colab if you have an account:
+
 1. Go to https://colab.research.google.com/.
 2. Click on the "GitHub" tab.
 3. Enter the URL of the Git repository & press Tab selecting humaidan/pysheets1 | main branch:
@@ -24,16 +35,17 @@ The Python Excel Data Extractor is a script that reads data from a source Excel 
 You can modify the following variables in the `config.py` file:
 
 ```
-- excelfile: excel file path and name
-- modified_excelfile: new file path and name
-- sheetname_source: source sheet to read data from
-- sheetname_dest: template sheet to copy and write data in
-- sysname_col: system name to name the new sheet created
-- sysname_col_append: appending the previous name
-- field_mapping: dictonary in the form of destination cell informat of A# as a key and value of corresponding column names in source sheet
-- pre_fills: dictionary to pre-fill a certain field in the above field_mapping dict
-- short_titles: rename a sheet name if found in this dict
-
+    - excelfile: excel file path and name
+    - modified_excelfile: new file path and name
+    - sheetname_source: source sheet to read data from
+    - sheetname_dest: template sheet to copy and write data in
+    - sysname_col: system name to name the new sheet created
+    - sysname_col_append: appending the previous name
+    - start_row: number of row where the content of the table starts
+    - max_title_chars: max allowed characters for sheet name [excel limitation is 30]
+    - field_mapping: dictonary in the form of destination cell informat of A# as a key and value of corresponding column names in source sheet
+    - pre_fills: dictionary to pre-fill a certain field in the above field_mapping dict
+    - short_titles: rename a sheet name if found in this dict
 ```
 
 ## Contributing
