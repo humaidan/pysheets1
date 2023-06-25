@@ -1,4 +1,5 @@
 import openpyxl
+import os
 
 # import warnings
 from config import CONFIG
@@ -7,18 +8,23 @@ from config import CONFIG
 # warnings.simplefilter("ignore", category=UserWarning)
 debug = True
 
-print("Opening sheet ...")
+print("Opening source sheet ...")
 wb = openpyxl.load_workbook(CONFIG["excelfile"])
+
 sheet1 = wb[CONFIG["sheetname_source"]]
 sheet2 = wb[CONFIG["sheetname_dest"]]
 
 print("Parsing and writing data ...")
-start_row = 2
-# for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, max_row=2, values_only=True)):
+
+sheets = 0
+start_row = CONFIG["start_row"]
+
+# for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, max_row=12, values_only=True)):
 for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, values_only=True)):
     if debug:
         print(f"- looping through record #{row_no+start_row}:")
     newsheet = wb.copy_worksheet(sheet2)
+    newsheet.showGridLines = False
 
     if debug:
         print(f"\t - set title to: {row_val[CONFIG['sysname_col']]} + {CONFIG['sysname_col_append']}:")
@@ -26,6 +32,11 @@ for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, values_only
     newtitle = row_val[CONFIG["sysname_col"]].rstrip()
     if newtitle in CONFIG["short_titles"]:
         newtitle = CONFIG["short_titles"][newtitle]
+
+    newtitle = newtitle.replace("- ", "")
+    max_title_chars = CONFIG["max_title_chars"] - len(CONFIG["sysname_col_append"])
+    if len(newtitle) > max_title_chars:
+        newtitle = newtitle[: max_title_chars - 1] + "."
 
     newsheet.title = newtitle + CONFIG["sysname_col_append"]
 
@@ -64,11 +75,14 @@ for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, values_only
             print()
         newsheet[target_cell] = str(source_value).rstrip()
 
+    sheets += 1
+
 
 print("Cleaning ...")
 # Close the workbook
 # wb.close()
 wb.save(CONFIG["modified_excelfile"])
-wb.close()
+# wb.close()
 
-print("Done.")
+print(f"{sheets} new sheets added.")
+print()

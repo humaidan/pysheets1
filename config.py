@@ -5,7 +5,10 @@ CONFIG = {
     "sheetname_dest": "Template",
     "sysname_col": 0,
     "sysname_col_append": " Service",
+    "start_row": 3,
+    "max_title_chars": 30,
     "field_mapping": {
+        "D2": "A",
         "E5": "F",
         "C8": ["E", "F", "G", "I"],
         "H11": "K",
