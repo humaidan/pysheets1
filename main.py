@@ -7,7 +7,7 @@ from config import CONFIG
 
 
 # warnings.simplefilter("ignore", category=UserWarning)
-debug = True
+debug = False
 
 print("Opening source sheet ...")
 wb = openpyxl.load_workbook(CONFIG["excelfile"])

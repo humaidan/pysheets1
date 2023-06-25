@@ -10,11 +10,14 @@ The Python Excel Data Extractor is a script that reads data from a source Excel 
 
 1. Go to https://colab.research.google.com/.
 2. Click on the "GitHub" tab.
-3. Enter the URL of the Git repository:
+3. Enter the URL of the Git repository & press Tab selecting humaidan/pysheets1 | main branch:
    https://github.com/humaidan/pysheets1.git
 4. Select main.ipynb file from the repository
-5. The notebook will open in Google Colab, and you'll be able to execute the code cells and interact with the notebook's content.
-6. Input your excel in main folder and the output file will be in out folder
+   ![Ali Humaidan pysheets1 open in Google Colab Image](images/alihumaidan-pysheet-colab.png)
+5. Click on main.ipynb
+6. The notebook will open in Google Colab, and you'll be able to execute the code cells and interact with the notebook's content.
+7. Place your excel in main folder (check config.py) and the output file will be in out folder
+8. from Runtime menu -> Run all & confirm any warning
 
 ## Configuration
 
