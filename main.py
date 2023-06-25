@@ -25,7 +25,7 @@ for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, values_only
     if debug:
         print(f"- looping through record #{row_no+start_row}:")
     newsheet = wb.copy_worksheet(sheet2)
-    newsheet.showGridLines = False
+    newsheet.sheet_view.showGridLines = False
 
     if debug:
         print(f"\t - set title to: {row_val[CONFIG['sysname_col']]} + {CONFIG['sysname_col_append']}:")
