@@ -25,7 +25,7 @@ Otherwise, run it remotely from google colab if you have an account:
    https://github.com/humaidan/pysheets1.git
 4. Select main.ipynb file from the repository
    ![Ali Humaidan pysheets1 open in Google Colab Image](images/alihumaidan-pysheet-colab.png)
-5. Click on main.ipynb
+5. Click on ![Open icon](images/open.png) of main.ipynb
 6. The notebook will open in Google Colab, and you'll be able to execute the code cells and interact with the notebook's content.
 7. Place your excel in main folder (check config.py) and the output file will be in out folder
 8. from Runtime menu -> Run all & confirm any warning
