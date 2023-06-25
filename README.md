@@ -14,10 +14,12 @@ The Python Excel Data Extractor is a script that reads data from a source Excel 
 To run the app if you have your own python environment, do the followings:
 
 ```bash
-bash>python main.py
+(py-env) ubuntu@srv$ python main.py
 ```
 
-if you know what you're doing you can run it with Google Colab(https://colab.research.google.com/) or nbviewer.org(https://nbviewer.org/). Otherwise you probably shouldn't be touching this repo or reading this file.
+![Ali Humaidan pysheets1 run](images/pysheet1-run.png)
+
+if you know what you're doing you can run it with Google Colab(https://colab.research.google.com/) or nbviewer.org(https://nbviewer.org/). **Otherwise** you probably _shouldn't_ be touching this repo or reading this file.
 
 1. Go to https://colab.research.google.com/.
 2. Click on the "GitHub" tab.
