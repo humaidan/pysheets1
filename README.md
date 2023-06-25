@@ -19,7 +19,7 @@ To run the app if you have your own python environment, do the followings:
 
 ![Ali Humaidan pysheets1 run](images/pysheet1-run.png)
 
-if you know what you're doing you can run it with Google Colab(https://colab.research.google.com/) or nbviewer.org(https://nbviewer.org/). **Otherwise** you probably _shouldn't_ be touching this repo or reading this file.
+if you know what you're doing you can run it with Google Colab(https://colab.research.google.com/) or nbviewer.org(https://nbviewer.org/). **Otherwise you probably _shouldn't_ be touching this repo or reading this file.**
 
 1. Go to https://colab.research.google.com/.
 2. Click on the "GitHub" tab.
