@@ -21,11 +21,12 @@ for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, values_only
     newsheet = wb.copy_worksheet(sheet2)
 
     if debug:
-        print(f"\t - set title to: {row_val[CONFIG['sysname_col']] + CONFIG['sysname_col_append']}:")
+        print(f"\t - set title to: {row_val[CONFIG['sysname_col']]} + {CONFIG['sysname_col_append']}:")
 
     newtitle = row_val[CONFIG["sysname_col"]].rstrip()
     if newtitle in CONFIG["short_titles"]:
         newtitle = CONFIG["short_titles"][newtitle]
+
     newsheet.title = newtitle + CONFIG["sysname_col_append"]
 
     for target_cell, source_col_str in CONFIG["field_mapping"].items():
@@ -54,7 +55,7 @@ for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, values_only
                 source_col_val = openpyxl.utils.column_index_from_string(col)
                 cell = sheet1.cell(row=row_no + start_row, column=source_col_val).value
                 if cell is not None:
-                    source_value += "- " + cell + "\n"
+                    source_value += "- " + str(cell) + "\n"
 
         # Write value in new sheet
         if debug:
