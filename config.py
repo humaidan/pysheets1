@@ -1,9 +1,9 @@
 CONFIG = {
-    "excelfile": "BAC-GF Systems - Jun23.xlsx",
+    "excelfile": "BAC-GF Systems.xlsx",
     "modified_excelfile": "out/GFG Systems_modified.xlsx",
     "sheetname_source": "All Services",
     "sheetname_dest": "Template",
-    "sysname_col": 0,
+    "sysname_col": 3,
     "sysname_col_append": " Service",
     "start_row": 3,
     "max_title_chars": 30,

@@ -28,12 +28,18 @@ if __name__ == "__main__":
     sheet1 = wb[CONFIG["sheetname_source"]]
     sheet2 = wb[CONFIG["sheetname_dest"]]
 
-    # for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, max_row=12, values_only=True)):
     for row_no, row_val in enumerate(sheet1.iter_rows(min_row=start_row, values_only=True)):
+        if row_val[CONFIG["sysname_col"]] is None:
+            print("Reached empty service:")
+            print(row_val)
+            break
+
         if debug:
             print(f"- looping through record #{row_no+start_row}:")
         newsheet = wb.copy_worksheet(sheet2)
         newsheet.sheet_view.showGridLines = False
+
+        newsheet.conditional_formatting._cf_rules = sheet2.conditional_formatting._cf_rules.copy()
 
         if debug:
             print(f"\t - set title to: {row_val[CONFIG['sysname_col']]} + {CONFIG['sysname_col_append']}:")
@@ -70,7 +76,7 @@ if __name__ == "__main__":
                 if debug:
                     print(f"\t - detected a source list {source_col_str}:")
 
-                source_value = "'"
+                source_value = ""
                 for col in source_col_str:
                     source_col_val = openpyxl.utils.column_index_from_string(col)
                     cell = sheet1.cell(row=row_no + start_row, column=source_col_val).value
@@ -84,13 +90,12 @@ if __name__ == "__main__":
                 print()
             newsheet[target_cell] = str(source_value).rstrip()
 
+        newsheet[target_cell].alignment = newsheet[target_cell].alignment.copy(wrap_text=True)
+        # newsheet[target_cell].alignment = openpyxl.styles.Alignment(horizontal="center")
         sheets += 1
 
     print("Cleaning ...")
-    # Close the workbook
-    # wb.close()
     wb.save(CONFIG["modified_excelfile"])
-    # wb.close()
 
     print(f"{sheets} new sheets added.")
     print()
